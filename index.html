@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taghazout Surf - Le paradis des vagues</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div>
+      <header class="header">
+        <img src="/image/Surfer à Taghazout.png" alt="Logo" />
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav class="navigation" id="nav">
+          <a href="#accueil">Accueil</a>
+          <a href="#apropos">À propos</a>
+          <a href="#services">Services</a>
+          <a class="btn-contact" href="#contact">Contact</a>
+        </nav>
+      </header>
+      <section class="hero-section" id="accueil">
+        <div class="hero-content">
+          <h1>Bienvenue à Taghazout Surf</h1>
+          <h2>Le paradis des vague</h2>
+          <p>
+            Découvrez l'esprit du surf à Taghazout, profitez des vagues du
+            soleil et de l'ambiance unique de ce spot mythique du Maroc.
+          </p>
+          <button class="cta-button" id="contact-hero">Contactez-nous</button>
+        </div>
+        <div class="hero-image-container">
+          <img
+            src="/image/Complete Taghazout Travel Guide 2025 _ Surf, Yoga, Stays — Finding Our Adventure.jpeg"
+            alt="Hero"
+            class="upload-preview"
+            id="hero-preview"
+          />
+        </div>
+      </section>
+      <section class="about-section" id="apropos">
+        <h1 class="about-text">À propos</h1>
+        <div class="about-container">
+          <div class="about-image-container">
+            <img
+              src="/image/Taghazout, Morocco_ the Ultimate Travel Guide _ Morocco Travel _ Morocco roadtrip.jpeg"
+              alt="Hero"
+              class="upload-preview"
+              id="hero-preview"
+            />
+          </div>
+
+          <div class="about-text">
+            <p>
+              Niché sur la côte atlantique marocaine, Taghazout est un véritable
+              paradis pour les amateurs de surf du monde entier. Notre mission
+              est simple : partager la passion du surf et faire découvrir
+              l’énergie unique de ce village de pêcheurs devenu un spot
+              incontournable.Que vous soyez débutant ou surfeur confirmé, nous
+              vous accompagnons avec des cours adaptés, des conseils
+              personnalisés et une ambiance conviviale. Plus qu’un sport, e surf
+              à Taghazout est une expérience humaine et culturelle, rythmée par
+              l’océan, le soleil etla bonne humeur.Rejoignez-nous et
+              laissez-vous porter par les vagues de Taghazout ! 🌴🏄‍♂️
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="services-section" id="services">
+        <h1 class="services-title">services</h1>
+        <div class="services-container">
+          <div class="service-card">
+            <div class="image-card">
+              <img
+                src="image/nico-bhlr-QT-l619id6w-unsplash.jpg"
+                alt="Service 1"
+                id="service-preview1"
+              />
+            </div>
+            <div class="service-info">
+              <h3>Location de Matériel</h3>
+              <ul>
+                <li>Planches de surf (combinaisons, boobyboards)</li>
+                <li>Séjours avec hébergement + repas</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="image-card">
+              <img
+                src="image/thomas-ashlock-7G5dkthFyxA-unsplash.jpg"
+                alt="Service 1"
+                id="service-preview1"
+              />
+            </div>
+            <div class="service-info">
+              <h3>Cours de Surf</h3>
+              <ul>
+                <li>
+                  Apprentissage des bases (sécurité, sécurité, techniques
+                  simples)
+                </li>
+                <li>Perfectionnement des manœuvres et accompagnement en mer</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="image-card">
+              <img
+                src="image/nick-fewings-Of8XhtKP-Us-unsplash.jpg"
+                alt="Service 1"
+                id="service-preview1"
+              />
+            </div>
+            <div class="service-info">
+              <h3>Yoga & Surf/Photographie & Vidéo</h3>
+              <ul>
+                <li>
+                  Sessions yoga pour améliorer l'équilibre et la récupération
+                </li>
+                <li>Photographie souvenirs de vos sessions surf</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="weather-section" id="meteo">
+        <div class="weather-container">
+          <h2 class="weather-title">Météo Taghazout</h2>
+          <div class="weather-card">
+            <div class="current-temp">
+              <div class="temp-value" id="temp-value"></div>
+              <div class="temp-description" id="temp-description"></div>
+            </div>
+            <div class="weather-details">
+              <div class="weather-item">
+                <div class="weather-item-label">Température ressentie :</div>
+                <div class="weather-item-value" id="feels-like"></div>
+              </div>
+              <div class="weather-item">
+                <div class="weather-item-label">Vitesse du vent :</div>
+                <div class="weather-item-value" id="wind-speed"></div>
+              </div>
+              <div class="weather-item">
+                <div class="weather-item-label">Humidité :</div>
+                <div class="weather-item-value" id="humidity"></div>
+              </div>
+              <div class="weather-item">
+                <div class="weather-item-label">Pression :</div>
+                <div class="weather-item-value" id="pressure"></div>
+              </div>
+            </div>
+          </div>
+          <div class="surf-message" id="surf-message"></div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="contact-container">
+          <h2 class="contact-title">Contactez-nous</h2>
+          <div class="contact-content">
+            <div class="contact-form">
+              <h3 class="form-title">✉️ Écrivez-nous par email:</h3>
+              <input
+                type="email"
+                placeholder="contact@taghazoutsurf.com"
+                class="contact-input"
+              />
+              <textarea
+                placeholder="ex: Description : Ceci est la description par défaut."
+                class="contact-textarea"
+              ></textarea>
+              <button class="submit-button">ENVOYER</button>
+            </div>
+            <div class="contact-info">
+              <h3 class="info-title">Appelez-nous :</h3>
+              <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <span>Téléphone : +212 6 12 34 56 78</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">💬</span>
+                <span>WhatsApp : +212 6 12 34 56 78</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <div class="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3383.842027999547!2d-9.713407!3d30.542627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdae02c73c6f6b3f%3A0x30640eb5d943b1d0!2sTaghazout%2C%20Maroc!5e0!3m2!1sfr!2sma!4v1759320000000!5m2!1sfr!2sma"
+                    width="100%"
+                    height="250"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="footer-wave"></div>
+        <div class="footer-content">
+          <div class="footer-left">
+            <label for="footer-logo-upload" style="cursor: pointer">
+              <img
+                src="image/Surfer à Taghazout.png"
+                alt="Logo"
+                class="footer-logo"
+                id="footer-logo-preview"
+              />
+              <input
+                type="file"
+                id="footer-logo-upload"
+                accept="image/*"
+                style="display: none"
+              />
+            </label>
+            <h3 class="footer-brand">Taghazout Surf</h3>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <a href="#accueil">Accueil</a>
+              <a href="#apropos">À propos</a>
+              <a href="#services">Services</a>
+            </div>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact :</h4>
+            <p>📞 Téléphone : +212 608749699</p>
+            <p>💬 WhatsApp : +212 608749699</p>
+            <p>✉️ Email : contact@surf-taghazout.com</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Surf Taghazout. Tous droits réservés.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
