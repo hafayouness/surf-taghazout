@@ -64,3 +64,146 @@ document.querySelectorAll(".navigation a").forEach((link) => {
     nav.classList.remove("active");
   });
 });
+
+const emailInput = document.querySelector(".contact-input");
+const messageTextarea = document.querySelector(".contact-textarea");
+const submitButton = document.querySelector(".submit-button");
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function showError(element, message) {
+  const existingError = element.parentElement.querySelector(".error-message");
+  if (existingError) {
+    existingError.remove();
+  }
+
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "error-message";
+  errorDiv.style.color = "#ff4444";
+  errorDiv.style.fontSize = "14px";
+  errorDiv.style.marginTop = "5px";
+  errorDiv.textContent = message;
+
+  element.style.borderColor = "#ff4444";
+  element.parentElement.insertBefore(errorDiv, element.nextSibling);
+}
+
+function removeError(element) {
+  const errorMessage = element.parentElement.querySelector(".error-message");
+  if (errorMessage) {
+    errorMessage.remove();
+  }
+  element.style.borderColor = "";
+}
+
+function showSuccessMessage() {
+  const successDiv = document.createElement("div");
+  successDiv.className = "success-message";
+  successDiv.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+  `;
+  successDiv.textContent = "✓ Message envoyé avec succès !";
+
+  document.body.appendChild(successDiv);
+
+  setTimeout(() => {
+    successDiv.style.animation = "slideOut 0.3s ease-out";
+    setTimeout(() => successDiv.remove(), 300);
+  }, 3000);
+}
+
+emailInput.addEventListener("input", function () {
+  if (this.value.trim() === "") {
+    removeError(this);
+  } else if (!isValidEmail(this.value)) {
+    showError(this, "Veuillez entrer une adresse email valide");
+  } else {
+    removeError(this);
+  }
+});
+
+messageTextarea.addEventListener("input", function () {
+  if (this.value.trim() === "") {
+    removeError(this);
+  } else if (this.value.trim().length < 10) {
+    showError(this, "Le message doit contenir au moins 10 caractères");
+  } else {
+    removeError(this);
+  }
+});
+
+submitButton.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  let isValid = true;
+
+  if (emailInput.value.trim() === "") {
+    showError(emailInput, "L'adresse email est requise");
+    isValid = false;
+  } else if (!isValidEmail(emailInput.value)) {
+    showError(emailInput, "Veuillez entrer une adresse email valide");
+    isValid = false;
+  } else {
+    removeError(emailInput);
+  }
+
+  if (messageTextarea.value.trim() === "") {
+    showError(messageTextarea, "Le message est requis");
+    isValid = false;
+  } else if (messageTextarea.value.trim().length < 10) {
+    showError(
+      messageTextarea,
+      "Le message doit contenir au moins 10 caractères"
+    );
+    isValid = false;
+  } else {
+    removeError(messageTextarea);
+  }
+
+  if (isValid) {
+    console.log("Message:", messageTextarea.value);
+
+    showSuccessMessage();
+
+    emailInput.value = "";
+    messageTextarea.value = "";
+  }
+});
+
+const style = document.createElement("style");
+style.textContent = `
+  @keyframes slideIn {
+    from {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(style);
